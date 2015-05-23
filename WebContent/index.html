@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Recipe Finder</title>
+<link rel="stylesheet"
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="recipeFinder.js"></script>
+</head>
+<body>
+
+	<form id="recipeFinderForm">
+		<fieldset>
+			<legend>Give input here</legend>
+			<table>
+				<tr>
+					<td><label for="fridgeList">Fridge CSV List:</label></td>
+					<td><textarea id="fridgeList" name="fridgeList" cols="25"
+rows="7">bread,10,slices,25/06/2016
+cheese,10,slices,25/06/2016
+peanut butter,250,grams,2/06/2016
+mixed salad,150,grams,26/06/2015</textarea></td>
+				</tr>
+				<tr>
+					<td><label for="recipeJson">JSON Recipe data:</label></td>
+					<td><textarea id="recipeJson" name="recipeJson" cols="25"
+rows="7">[{"name":"grilled cheese on toast","ingredients":[
+{"item":"bread","amount":"2","unit":"slices"},
+{"item":"cheese","amount":"2","unit":"slices"}
+]},
+{"name":"salad sandwich","ingredients":[
+{"item":"bread","amount":"2","unit":"slices"},
+{"item":"mixed salad","amount":"100","unit":"grams"}
+]}]</textarea></td>
+				</tr>
+				<tr>
+					<td><input id="submitButton" type="button" value="Submit" /></td>
+				</tr>
+			</table>
+
+		</fieldset>
+	</form>
+	<div id="responseDiv">
+		<fieldset>
+			<legend>Recommended to cook tonight</legend>
+			<div id="ajaxResponse"></div>
+		</fieldset>
+	</div>
+
+</body>
+</html>
